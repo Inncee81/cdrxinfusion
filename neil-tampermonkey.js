@@ -29,7 +29,7 @@ $(document).ready(function() {
       $("#SOC").click();// this is the checkbox
       $("#OK").click();
       $("#submitButton").click();
-      setTimeout(function(){ window.location.href = "https://www.carecentrixportal.com/ProviderPortal/referral/myReferral.do"; }, 2000);
+      setTimeout(function(){ window.location.href = "https://www.carecentrixportal.com/ProviderPortal/referral/myReferral.do"; }, 3000);
     }
 
     else if(DDmatchingLinks.length > 0) {
