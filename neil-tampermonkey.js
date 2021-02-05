@@ -13,7 +13,7 @@
 
 $(document).ready(function() {
   var loc = window.top.location.toString();
-
+  
   refreshClick();
   function refreshClick() {
     var x = 1;
@@ -29,13 +29,16 @@ $(document).ready(function() {
       $("#SOC").click();// this is the checkbox
       $("#OK").click();
       $("#submitButton").click();
-      setTimeout(function(){ window.location.href = "https://www.carecentrixportal.com/ProviderPortal/referral/myReferral.do"; }, 3000);
     }
 
     else if(DDmatchingLinks.length > 0) {
       $(DDmatchingLinks).each(function(index) {
         window.location.replace($(this).attr("href"));
       });
+    }
+    else if(loc.indexOf('btnValue=acceptSubmit')!==-1){
+      setTimeout(function(){ window.location.href = "https://www.carecentrixportal.com/ProviderPortal/referral/myReferral.do"; }, 3000);
+      //window.top.location.replace(loc.replace(/\?btnValue=acceptSubmit/g,''));
     }
 
     // if no new patients continue checking screen every second
