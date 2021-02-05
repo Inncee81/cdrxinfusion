@@ -13,10 +13,6 @@
 
 $(document).ready(function() {
   var loc = window.top.location.toString();
-  if(loc.indexOf('btnValue=acceptSubmit')!==-1){
-    window.location.href = "https://www.carecentrixportal.com/ProviderPortal/referral/myReferral.do";
-    //window.top.location.replace(loc.replace(/\?btnValue=acceptSubmit/g,''));
-  }
 
   refreshClick();
   function refreshClick() {
@@ -33,6 +29,7 @@ $(document).ready(function() {
       $("#SOC").click();// this is the checkbox
       $("#OK").click();
       $("#submitButton").click();
+      setTimeout(function(){ window.location.href = "https://www.carecentrixportal.com/ProviderPortal/referral/myReferral.do"; }, 2000);
     }
 
     else if(DDmatchingLinks.length > 0) {
