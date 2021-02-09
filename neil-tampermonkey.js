@@ -13,10 +13,10 @@
 
 $(document).ready(function() {
   var loc = window.top.location.toString();
-  
+
   refreshClick();
   function refreshClick() {
-    var x = 1;
+    var x = 1.5;
 
     // if a new patient drops click the view link
     var DDmatchingLinks = $( "a[href*='/ProviderPortal/referral/notificationReferral.do']" );
