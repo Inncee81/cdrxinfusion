@@ -7,9 +7,12 @@
 // @include      https://www.carecentrixportal.com/ProviderPortal/referral/myReferral.do
 // @include      https://www.carecentrixportal.com/ProviderPortal/referral/myReferral.do?method1=selectTab&hideAdvanceSearchFlag=true&activeTab=Active*
 // @include      https://www.carecentrixportal.com/ProviderPortal/referral/notificationReferral.do*
-// @grant        none
+// @include      https://www.carecentrixportal.com/ProviderPortal/referral/myReferral.do?method=myReferralHome
+// @grant        GM.xmlHttpRequest
+
 
 // ==/UserScript==
+var rejectBit = 0;
 $(document).ready(function() {
   // get current location. If it includes submit - redirect to main page
   var loc = window.top.location.toString();
@@ -25,7 +28,6 @@ $(document).ready(function() {
     // HCPC would be eq(2)
     // Diagnosis would be eq(6)
     if($("#htdBtnValue").length != 0) {
-      var rejectBit = 0;
       var badHCPC = ["J3411","J2405","S9366","S9365","S9367"];
       var badDiagnosis = ["D509"];
       $(".myreferralviewassigndetails > table > tbody > tr").each(function() {
@@ -57,9 +59,10 @@ $(document).ready(function() {
         $("#submitButton").click();
       }
     }
-
     // if the view link exsists, click it
+
     else if(matchingLinks.length > 0) {
+      var jsonLinks = JSON.stringify(matchingLinks);
       $(matchingLinks).each(function(index) {
         window.location.replace($(this).attr("href"));
       });
@@ -80,6 +83,5 @@ $(document).ready(function() {
   function refreshPage(x) {
     setTimeout(function(){ location.reload(); }, x*1000);
   }
-
 
 });
