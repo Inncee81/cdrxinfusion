@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         cdrxinfusion carecentrix quick grab
 // @namespace    https://www.carecentrixportal.com/ProviderPortal/referral/myReferral.do
-// @version      1.1
+// @version      1.2
 // @description  Grab that patient!
 // @author       Darren DeLitizia ddgiants@gmail.com
 // @include      https://www.carecentrixportal.com/ProviderPortal/referral/myReferral.do
